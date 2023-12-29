@@ -1,4 +1,4 @@
-{% set asset='index' %}
+<!-- {% set asset='index' %} -->
 
 {% extends "layout.html" %}
 
@@ -12,7 +12,7 @@
     <div class="col-sm-12">
       <h2>
         <img src="{{ url_for('static', filename='img/yugabyte-logos.svg') }}" alt="Yugabyte Logo" style="width:40px;">
-        Yugabyte
+        yugabyteDB
         <small class="text-muted ml-4">
           YSQL execution plan visualizer
         </small>
@@ -60,7 +60,7 @@
             For best results, use <code>EXPLAIN (ANALYZE, DIST, COSTS, VERBOSE, BUFFERS, FORMAT JSON)</code>
             <br>
             <em>ysqlsh</em> users can export the plan to a file using:
-            <pre class="ml-3"><code>ysqlsh -XqAt -f explain.sql > analyze.json</code></pre>
+            <code>ysqlsh -XqAt -f explain.sql > analyze.json</code>
             </p>
           </div>
         </div>

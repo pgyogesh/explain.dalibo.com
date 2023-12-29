@@ -1,35 +1,35 @@
 {
   "app/static/js/common.js": {
-    "file": "assets/about.cd70fbe9.js",
+    "file": "assets/about.228190df.js",
     "src": "app/static/js/common.js",
     "isEntry": true,
     "css": [
-      "assets/common.39571ca4.css"
+      "assets/common.bdf4645d.css"
     ]
   },
   "app/static/js/index.js": {
-    "file": "assets/index.93c8f030.js",
+    "file": "assets/index.281f77c7.js",
     "src": "app/static/js/index.js",
     "isEntry": true,
     "imports": [
       "app/static/js/common.js",
-      "_index.20ffe401.js"
+      "_index.e988272c.js"
     ]
   },
   "app/static/js/plan.js": {
-    "file": "assets/plan.189e6c70.js",
+    "file": "assets/plan.7d90e254.js",
     "src": "app/static/js/plan.js",
     "isEntry": true,
     "imports": [
       "app/static/js/common.js",
-      "_index.20ffe401.js"
+      "_index.e988272c.js"
     ],
     "css": [
       "assets/plan.f7f700de.css"
     ]
   },
-  "_index.20ffe401.js": {
-    "file": "assets/index.20ffe401.js",
+  "_index.e988272c.js": {
+    "file": "assets/index.e988272c.js",
     "imports": [
       "app/static/js/common.js"
     ]
@@ -39,7 +39,7 @@
     "src": "app/static/js/plan.css"
   },
   "app/static/js/common.css": {
-    "file": "assets/common.39571ca4.css",
+    "file": "assets/common.bdf4645d.css",
     "src": "app/static/js/common.css"
   }
 }

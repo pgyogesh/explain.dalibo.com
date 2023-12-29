@@ -2,3 +2,5 @@ venv
 node_modules
 instance/config.py
 __pycache__/
+app/static/dist/*
+app/static/dist/manifest.json

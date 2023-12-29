@@ -1,7 +1,11 @@
 $primary: #131017 !default;
 $dark: darken($primary, 15%) !default;
 $link-color: #007bff;
-$body-color: #495057;
+$yugabyte_dark: #131017;
+$yugabyte_orange: #EC6415;
+$yugabyte_white: #F5F5F7;
+$yugabyte_gray: #6E6E7A;
+$yugabyte_blue: #735AF4;
 @import 'node_modules/bootstrap/scss/bootstrap';
 
 [v-cloak] {
@@ -12,6 +16,63 @@ $body-color: #495057;
   color: $text-muted;
 
   &:hover {
-    color: $link-color;
+    color: $yugabyte_blue;
   }
+}
+
+footer {
+  margin-top: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  color: $yugabyte_white;
+  background-color: $primary;
+}
+
+body {
+  padding-top: 2rem;
+  background-color: $yugabyte_dark;
+  // text color
+  color: $yugabyte_white;
+  font-family: Roobert;
+  height: 100%;
+  display: flex;
+  overflow: auto;
+  flex-direction: column;
+}
+
+.btn-primary {
+  background-color: $yugabyte_white;
+  color: $yugabyte_dark;
+}
+
+.btn-primary:hover {
+  background-color: $yugabyte_orange;
+  color: $yugabyte_dark;
+}
+
+.form-control {
+  background-color: $yugabyte_dark;
+  color: $yugabyte_white;
+  border-color: $yugabyte_gray;
+}
+
+.fa-heart {
+  color: $yugabyte_orange;
+}
+
+.content {
+  flex: 1 0 auto;
+}
+
+div.row {
+  margin-bottom: 20px;
+}
+
+label {
+  color: #FFFFFF;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  color: #FFF;
 }
