@@ -1,0 +1,39 @@
+{% set asset='index' %}
+
+{% extends "layout.html" %}
+
+{% block title %}
+Plans
+{% endblock %}
+
+{% block body %}
+<div id="app" class="d-flex flex-column h-100">
+  <header class="header bg-dark">
+  <div class="row">
+    <div class="col-sm-12">
+      <h2>
+        <img src="{{ url_for('static', filename='img/yugabyte-logos.svg') }}" alt="Yugabyte Logo" style="width:40px;">
+        <a href="{{ url_for('index') }}" style="color: inherit; text-decoration: none;">
+            yugabyteDB
+          </a>
+        <small class="text-muted ml-4">
+          YSQL execution plan visualizer
+        </small>
+      </h2>
+    </div>
+  </div>
+  </header>
+  <h2 class="text-center mt-4">All Plans</h2>
+  <div class="plan-card-container">
+    {% for plan in plans %}
+      <a href="{{ url_for('plan_from_db', id=plan.id) }}" class="plan-card">
+        <div class="plan-title">{{ plan.title }}</div>
+      </a>
+    {% endfor %}
+  </div>
+</div>
+{% include 'footer.html' %}
+<script>
+const staticUrl = "{{ url_for('static', filename='') }}";
+</script>
+{% endblock %}

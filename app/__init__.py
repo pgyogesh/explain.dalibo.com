@@ -96,6 +96,11 @@ def save(json=False):
 def plan():
     return redirect(url_for("plan_error"))
 
+# For all plans
+@app.route('/plans')
+def plans():
+    plans = Plan.query.order_by(Plan.created.desc()).all()  # Replace with your method of fetching plans
+    return render_template('plans.html', plans=plans)
 
 @app.route("/plan/<id>")
 def plan_from_db(id):
