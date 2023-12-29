@@ -7,6 +7,10 @@ $yugabyte_white: #F5F5F7;
 $yugabyte_gray: #6E6E7A;
 $yugabyte_blue: #735AF4;
 @import 'node_modules/bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+body {
+  font-family: 'Montserrat', sans-serif;
+}
 
 [v-cloak] {
   display: none;
@@ -36,7 +40,7 @@ body {
   background-color: $yugabyte_dark;
   // text color
   color: $yugabyte_white;
-  font-family: Roobert;
+  // font-family: Roobert;
   height: 100%;
   display: flex;
   overflow: auto;
@@ -91,6 +95,37 @@ code {
 .list-group-item {
   background-color: lighten($yugabyte_dark, 5%);
   color: $yugabyte_white;
+}
+
+.plan-card {
+  background-color: lighten($yugabyte_dark, 5%);
+  color: $yugabyte_white;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 18rem;
+  height: 4rem;
+  margin: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+
+  &:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    background-color: $yugabyte_white
+  }
+
+  .plan-title {
+    font-size: 1rem;
+  }
+}
+
+.plan-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 div.modal-content {
