@@ -11,14 +11,14 @@
   <div class="row">
     <div class="col-sm-12">
       <h2>
-        <img src="{{ url_for('static', filename='img/logo_pev2.svg') }}" alt="Logo PEV2" style="width:40px;">
-        explain.dalibo.com
+        <img src="{{ url_for('static', filename='img/yugabyte-logos.svg') }}" alt="Yugabyte Logo" style="width:40px;">
+        Yugabyte
         <small class="text-muted ml-4">
-          PostgreSQL execution plan visualizer
+          YSQL execution plan visualizer
         </small>
       </h2>
       <p class="lead">
-        Visualizing and understanding PostgreSQL EXPLAIN plans made easy.
+        Visualizing and understanding YSQL EXPLAIN plans made easy.
       </p>
     </div>
   </div>
@@ -57,10 +57,10 @@
         <div class="col d-flex">
           <div class="">
             <p class="text-muted">
-            For best results, use <code>EXPLAIN (ANALYZE, COSTS, VERBOSE, BUFFERS, FORMAT JSON)</code>
+            For best results, use <code>EXPLAIN (ANALYZE, DIST, COSTS, VERBOSE, BUFFERS, FORMAT JSON)</code>
             <br>
-            <em>psql</em> users can export the plan to a file using:
-            <pre class="ml-3"><code>psql -XqAt -f explain.sql > analyze.json</code></pre>
+            <em>ysqlsh</em> users can export the plan to a file using:
+            <pre class="ml-3"><code>ysqlsh -XqAt -f explain.sql > analyze.json</code></pre>
             </p>
           </div>
         </div>
@@ -134,7 +134,7 @@
             <label class="custom-control-label" for="customSwitch1">Also delete from server</label>
           </div>
           <small class="form-text text-muted">
-            If you shared a link to this plan (social media, email, etc.), you probably want to keep it there.
+            If you shared a link to this plan (slack, email, etc.), you probably want to keep it there.
           </small>
         </div>
         <div class="modal-footer">

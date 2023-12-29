@@ -15,10 +15,10 @@ About |
   <div class="row">
     <div class="col-sm-12">
       <h2>
-        <img src="{{ url_for('static', filename='img/logo_pev2.svg') }}" alt="Logo PEV2" width="40px;">
-        <a href="{{ url_for('index') }}">explain.dalibo.com</a>
+        <img src="{{ url_for('static', filename='img/yugabyte-logos.svg') }}" alt="Logo PEV2" width="40px;">
+        <a href="{{ url_for('index') }}">yugabyte.com</a>
         <small class="text-muted ml-4">
-          PostgreSQL execution plan visualizer
+          Yugabyte YSQL execution plan visualizer
         </small>
       </h2>
     </div>
@@ -29,20 +29,17 @@ About |
         About
       </h2>
       <p>
-        This service lets you analyze, visualize and share <a href="http://www.postgresql.org/docs/current/static/sql-explain.html">Postgres Query Plans</a>. It will compute and highlight the most important information to make them easier to understand.
+        This service lets you analyze, visualize and share <a href="http://www.postgresql.org/docs/current/static/sql-explain.html">YSQL Query Plans</a>. It will compute and highlight the most important information to make them easier to understand.
       </p>
       <p>
-        It is brought to you by <a href="https://dalibo.com" class="font-weight-bold">Dalibo</a>.
+        It is brought to you by <a href="https://yugabyte.com" class="font-weight-bold">Yugabyte Support Team</a>.
       </p>
       <h3>
         Acknowledgements
       </h3>
-      <p>
-        This app was inspired and heavily influenced by the excellent <a href="https://explain.depesz.com">explain.depesz.com</a>. Both the tool and the corresponding help files are a great resource to learn about Postgres and its planner.
-      </p>
-      <p>
-        It's also heavily inspired by <a href="http://tatiyants.com/pev/">PEV</a> of which it can be considered a fork.
-      </p>
+      <P>
+        This app is clone of <a href="https://explain.dalibo.com">explain.dalibo.com</a>
+      </P>
       <h3>
         Usage tips
       </h3>
@@ -50,7 +47,7 @@ About |
         Format
       </h4>
       <p>
-        To get the most out of it, we recommend generating a query plan using the following line: <code>EXPLAIN (ANALYZE, COSTS, VERBOSE, BUFFERS, FORMAT JSON)</code>. It is recommend submitting a (decently formatted) SQL query that generated the plan.
+        To get the most out of it, we recommend generating a query plan using the following line: <code>EXPLAIN (ANALYZE, DIST, COSTS, VERBOSE, BUFFERS, FORMAT JSON)</code>. It is recommend submitting a (decently formatted) SQL query that generated the plan.
       </p>
       <p>
         PEV2 <b>can also parse text</b> although the JSON format usually has better support.
@@ -88,14 +85,11 @@ About |
       <p>
         This application uses <a href="https://github.com/dalibo/pev2" class="font-weight-bold">PEV2</a> JS library to analyze and display the plan.
       </p>
-      <p>
-        Please report bugs on <a href="https://github.com/dalibo/pev2/issues"><i class="fab fa-github"></i> github</a>.
-      </p>
       <h3 id="retention">
         Data retention policy
       </h3>
       <p>
-        The plans you send are stored in the database. This allows you to easily share a link to anyone.
+        The plans you send are stored in the internal postgresql database deployed GCP instance. This allows you to easily share a link to anyone.
       </p>
       <p>
         <b>It is recommended not to send any critical or sensitive information.</b>
@@ -105,10 +99,6 @@ About |
       </p>
       <p>
         You can delete the saved plans using the list shown in the home page. Make sure you're using the same browser.
-      </p>
-      <h4>Standalone version</h4>
-      <p>
-        You may preferably use a standalone (<i>browser only</i>) version of this app. Simply download this <a href="https://www.github.com/dalibo/pev2/releases/latest/download/index.html">HTML file</a> and run it in your browser.
       </p>
     </div>
   </div>
