@@ -18,13 +18,13 @@ body {
   display: none;
 }
 
-.link-gray {
-  color: $text-muted;
+// .link-gray {
+//   color: $text-muted;
 
-  &:hover {
-    color: $yugabyte_blue;
-  }
-}
+//   &:hover {
+//     color: $yugabyte_blue;
+//   }
+// }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 ::-webkit-scrollbar {
@@ -65,9 +65,22 @@ label {
   color: #FFFFFF;
 }
 
+a {
+  color: $yugabyte_blue;
+
+  &:hover {
+    color: $yugabyte_orange;
+    text-decoration: none;
+  }
+}
+
+em {
+  font-style: italic;
+  color: #E83E8B;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-  color: $yugabyte_white;
 }
 
 .btn-primary {

@@ -100,7 +100,7 @@
             <div class="col-6 text-right">
               <small>
                 <span v-if="plan.shareId">
-                  <a :href="'{{ url_for('plan') }}' + getPlanUrl(plan)" class="link-gray">
+                  <a :href="'{{ url_for('plan') }}' + getPlanUrl(plan)" class="link-gray" style="color: aliceblue;">
                     <font-awesome-icon icon="link"></font-awesome-icon>
                     plan/{{'{{plan.shareId}}'}}
                   </a>
