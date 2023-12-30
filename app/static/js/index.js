@@ -76,7 +76,7 @@ const app = createApp({
       if (!plan) {
         this.titleInput =
           this.titleInput ||
-          "Plan created on " + moment().format("MMMM Do YYYY, h:mm a");
+           moment().format("MMMM Do YYYY, h:mm a");
         var createdOn = new Date();
         plan = {
           title: this.titleInput,

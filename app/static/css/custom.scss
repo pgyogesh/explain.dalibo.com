@@ -141,8 +141,13 @@ code {
   justify-content: space-around;
 }
 
+.col-sm-12 {
+  margin-left: auto;
+  margin-bottom: 30px;
+}
+
 #queryInput, #planInput {
-  height: 165px;
+  height: 150px;
 }
 
 div.modal-content {

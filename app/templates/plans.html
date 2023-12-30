@@ -7,9 +7,13 @@ All Plans |
 {% endblock %}
 
 {% block body %}
-<div id="app" class="d-flex flex-column h-100">
-  <header class="header bg-dark">
-  <div class="row">
+<main role="main" class="flex-grow-1 overflow-auto">
+  <link rel="stylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/github.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <div class="container mt-2">
+    <div class="row">
     <div class="col-sm-12">
       <h2>
         <img src="{{ url_for('static', filename='img/yugabyte-logos.svg') }}" alt="Yugabyte Logo" style="width:40px;">
@@ -32,6 +36,8 @@ All Plans |
     {% endfor %}
   </div>
 </div>
+</div>
+</main>
 {% include 'footer.html' %}
 <script>
 const staticUrl = "{{ url_for('static', filename='') }}";
