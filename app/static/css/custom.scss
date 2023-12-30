@@ -40,19 +40,23 @@ html {
 body {
   padding-top: 0.3rem;
   background-color: $yugabyte_dark;
-  // text color
   color: $yugabyte_white;
-  // font-family: Roobert;
-  height: 100%;
+  height: 100%;  // Change to 100vh to make sure body takes full viewport height
   display: flex;
-  overflow: auto;
   flex-direction: column;
 }
 
+.main-content {
+  flex-grow: 1;
+}
+
 footer {
+  flex-shrink: 0;  // Add this to prevent footer from shrinking
+  flex-grow: 0;  // Add this to prevent footer from growing
   margin-top: 2rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+  margin-bottom: 0%;
   color: $yugabyte_white;
   background-color: $primary;
 }

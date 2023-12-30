@@ -50,6 +50,9 @@ def index():
 def about():
     return render_template("about.html")
 
+@app.route("/help")
+def help():
+    return render_template("help.html")
 
 class PlanForm(FlaskForm):
     title = StringField("Title")

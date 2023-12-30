@@ -1,4 +1,4 @@
-# YSQL Explain Analyzer
+# YSQL Explain Visualizer
 
 
 # Installation

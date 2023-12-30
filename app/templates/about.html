@@ -7,6 +7,7 @@ About |
 {% endblock %}
 
 {% block body %}
+<main role="main" class="flex-grow-1 overflow-auto">
 <link rel="stylesheet"
       href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/github.min.css">
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
@@ -42,26 +43,6 @@ About |
         This app is clone of <a href="https://explain.dalibo.com">explain.dalibo.com</a>
       </P>
       <br>
-      <h3>
-        Usage tips
-      </h3>
-      <h4>
-        Format
-      </h4>
-      <p>
-        To get the most out of it, we recommend generating a query plan using the following line: <code>EXPLAIN (ANALYZE, DIST, COSTS, VERBOSE, BUFFERS, FORMAT JSON)</code>. It is recommend submitting a (decently formatted) SQL query that generated the plan.
-      </p>
-      <p>
-        PEV2 <b>can also parse text</b> although the JSON format usually has better support.
-      </p>
-      <br>
-      <h4>
-        Sharing
-      </h4>
-      <p>
-        You can share the link to the plan you just submitted. It will be stored in the database and will be available for anyone to whom you share the link. This can shared over email, slack, or update on Zendesk or JIRA tickets.
-      </p>
-      <br>
       <h3 id="retention">
         Data retention policy
       </h3>
@@ -81,6 +62,7 @@ About |
     </div>
   </div>
 </div>
+</main>
 {% include 'footer.html' %}
 <script>
 const staticUrl = "{{ url_for('static', filename='') }}";
