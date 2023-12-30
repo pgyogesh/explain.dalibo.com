@@ -1,6 +1,5 @@
-# explain.dalibo.com
+# YSQL Explain Analyzer
 
-PEV2 Flask application
 
 # Installation
 
@@ -63,9 +62,9 @@ npm run dev
 FLASK_DEBUG=1 FLASK_APP=app python -m flask run
 ```
 
-# Releasing
+# For production
 
 ```shell
-git tag -a vx.x.x -m "x.x.x"
-git push --tags
+pip install gunicorn
+gunicorn -b 0.0.0.0:3345 app.wsgi:app
 ```

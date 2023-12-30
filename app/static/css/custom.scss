@@ -2,14 +2,16 @@ $primary: #131017 !default;
 $dark: darken($primary, 15%) !default;
 $link-color: #007bff;
 $yugabyte_dark: #131017;
-$yugabyte_orange: #EC6415;
+$yugabyte_orange: #FF5F3A;
 $yugabyte_white: #F5F5F7;
 $yugabyte_gray: #6E6E7A;
 $yugabyte_blue: #735AF4;
 @import 'node_modules/bootstrap/scss/bootstrap';
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
+
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Rubik', sans-serif;
 }
 
 [v-cloak] {
@@ -61,7 +63,7 @@ label {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-  color: #FFF;
+  color: $yugabyte_white;
 }
 
 .btn-primary {
@@ -78,6 +80,13 @@ code {
   background-color: $yugabyte_dark;
   color: $yugabyte_white;
   border-color: $yugabyte_gray;
+
+  &:focus {
+    background-color: $yugabyte_dark;
+    color: $yugabyte_white;
+    border-color: $yugabyte_orange;
+    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+  }
 }
 
 .fa-heart {
@@ -126,6 +135,10 @@ code {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+}
+
+#queryInput, #planInput {
+  height: 165px;
 }
 
 div.modal-content {
