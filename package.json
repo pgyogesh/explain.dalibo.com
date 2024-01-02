@@ -1,5 +1,5 @@
 {
-  "name": "explain.dalibo.com",
+  "name": "explain.internal.yugabyte.com",
   "version": "1.0.0",
   "description": "PEV2 Flask application",
   "private": true,
