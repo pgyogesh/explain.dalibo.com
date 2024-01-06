@@ -52,6 +52,15 @@ Help |
   </p>
   <br>
   <h4>
+    Tips and tricks
+  </h4>
+  <li>
+    Though running <code>EXPLAIN ANALYZE</code> gives you the most accurate plan, It actually runs the query and in case of DML queries, it will actually modify the data. So you can run DML queries within a transaction block and rollback the transaction to avoid modifying the data. For example:
+    <pre><code class="sql">BEGIN;
+EXPLAIN ANALYZE INSERT INTO t VALUES (1);
+ROLLBACK;</code></pre>
+  </li>
+  <h4>
     Feedback and suggestions
   </h4>
   <p>
