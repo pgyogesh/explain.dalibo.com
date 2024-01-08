@@ -18,19 +18,9 @@ const app = createApp({
   data: function () {
     return {
       samples: [
-        ["Example 1 (JSON)", "plan_1.json", "plan_1.sql"],
-        ["Example 1 (plain text)", "plan_1.txt", "plan_1.sql"],
-        ["Example 2", "plan_2.json", "plan_2.sql"],
-        ["Example 3", "plan_3.json", "plan_3.sql"],
-        ["Example 4", "plan_4.json"],
-        ["Example 5", "plan_5.json", "plan_5.sql"],
-        ["With subplan", "plan_6.txt"],
-        ["With CTE", "plan_7.txt"],
-        ["Very large plan", "plan_8.json"],
-        ["With trigger", "plan_trigger.json", "plan_trigger.sql"],
-        ["With trigger (plain text)", "plan_trigger.txt", "plan_trigger_2.sql"],
-        ["Parallel (verbose)", "plan_parallel.json"],
-        ["Parallel (4 workers)", "plan_parallel2.txt", "plan_parallel2.sql"],
+        ["BNL Read", "bnl_read.txt", "bnl_read.sql"],
+        ["Aggregation", "aggregate.txt", "aggregate.sql"],
+        ["CTE JSON", "cte.json", "cte.sql"],
       ],
       titleInput: "",
       planInput: "",

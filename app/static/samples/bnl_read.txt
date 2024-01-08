@@ -1,0 +1,44 @@
+QUERY PLAN
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+Unique  (cost=162.19..172.19 rows=1000 width=552) (actual time=17.141..17.244 rows=59 loops=1)
+  ->  Sort  (cost=162.19..164.69 rows=1000 width=552) (actual time=17.139..17.149 rows=160 loops=1)
+        Sort Key: c.email, c.firstname, c.lastname
+        Sort Method: quicksort  Memory: 38kB
+        ->  YB Batched Nested Loop Join  (cost=0.00..112.36 rows=1000 width=552) (actual time=16.854..16.955 rows=160 loops=1)
+              Join Filter: (t.genreid = g.genreid)
+              ->  YB Batched Nested Loop Join  (cost=0.00..109.61 rows=1000 width=298) (actual time=14.489..15.182 rows=412 loops=1)
+                    Join Filter: (il.trackid = t.trackid)
+                    ->  YB Batched Nested Loop Join  (cost=0.00..106.87 rows=1000 width=298) (actual time=8.357..9.021 rows=412 loops=1)
+                          Join Filter: (i.invoiceid = il.invoicelineid)
+                          ->  YB Batched Nested Loop Join  (cost=0.00..102.74 rows=1000 width=298) (actual time=4.773..5.153 rows=412 loops=1)
+                                Join Filter: (c.customerid = i.customerid)
+                                ->  Seq Scan on invoice i  (cost=0.00..100.00 rows=1000 width=8) (actual time=1.018..1.994 rows=412 loops=1)
+                                      Storage Table Read Requests: 3
+                                      Storage Table Read Execution Time: 1.724 ms
+                                ->  Index Scan using pk_customer on customer c  (cost=0.00..4.11 rows=1 width=298) (actual time=2.194..2.245 rows=59 loops=1)
+                                      Index Cond: (customerid = ANY (ARRAY[i.customerid, $1, $2, ..., $1023]))
+                                      Storage Table Read Requests: 1
+                                      Storage Table Read Execution Time: 1.185 ms
+                          ->  Index Scan using pk_invoiceline on invoiceline il  (cost=0.00..4.11 rows=1 width=8) (actual time=2.658..2.809 rows=412 loops=1)
+                                Index Cond: (invoicelineid = ANY (ARRAY[i.invoiceid, $1025, $1026, ..., $2047]))
+                                Storage Table Read Requests: 1
+                                Storage Table Read Execution Time: 2.038 ms
+                    ->  Index Scan using pk_track on track t  (cost=0.00..4.11 rows=1 width=8) (actual time=4.971..5.134 rows=412 loops=1)
+                          Index Cond: (trackid = ANY (ARRAY[il.trackid, $2049, $2050, ..., $3071]))
+                          Storage Table Read Requests: 1
+                          Storage Table Read Execution Time: 4.355 ms
+              ->  Index Scan using pk_genre on genre g  (cost=0.00..4.12 rows=1 width=262) (actual time=1.111..1.116 rows=1 loops=1)
+                    Index Cond: (genreid = ANY (ARRAY[t.genreid, $3073, $3074, ..., $4095]))
+                    Remote Filter: ((name)::text = 'Rock'::text)
+                    Storage Table Read Requests: 1
+                    Storage Table Read Execution Time: 0.932 ms
+Planning Time: 3.286 ms
+Execution Time: 18.757 ms
+Storage Read Requests: 7
+Storage Read Execution Time: 10.235 ms
+Storage Write Requests: 0.000
+Catalog Read Requests: 0
+Catalog Write Requests: 0.000
+Storage Flush Requests: 0
+Storage Execution Time: 10.235 ms
+Peak Memory Usage: 2996 kB
